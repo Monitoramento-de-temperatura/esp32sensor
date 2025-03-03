@@ -1,4 +1,4 @@
-# **Sistema de Monitoramento de Temperatura para ambiente climatizado por ar condicionado do tipo Chiller**
+# **Sistema de Monitoramento de Temperatura para ambiente climatizado por ar condicionado do tipo Chiller usando microcontrolador ESP32**
 
 ## **Descrição**
 
