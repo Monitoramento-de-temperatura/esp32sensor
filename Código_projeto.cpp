@@ -143,7 +143,7 @@ void loop() {
     // Faz a leitura da Temperatura
     float temperatura = dht.readTemperature();
     if (isnan(temperatura)) {
-        Serial.println("Erro ao ler DHT11!"); // Se tiver um erro de leitura do sensor
+        Serial.println("Erro ao ler DHT11!"); // Exibe no monitor serial se tiver um erro de leitura do sensor DHT11
         display.clearDisplay();
         display.setTextSize(1);
         display.setTextColor(WHITE);
@@ -229,7 +229,7 @@ void enviarEmail(float temp) {
     message.text.content = emailBody.c_str();
  
 
-    // Se a conexão falhar imprimi mensagem de erro no serial
+    // Se a conexão falhar imprime mensagem de erro no serial
     if (!smtp.connect(&session)) {
         Serial.println("Falha ao conectar ao servidor SMTP!");
         display.clearDisplay();
@@ -240,7 +240,7 @@ void enviarEmail(float temp) {
         display.display();
         return;
     }
-    // Tentar enviar o e-mail, se não conseguir exibe mensagem de erro
+    // Tenta enviar o e-mail, se não conseguir exibe mensagem de erro
     if (!MailClient.sendMail(&smtp, &message)) {
         Serial.println("Erro ao enviar e-mail: " + smtp.errorReason());
         display.clearDisplay();
